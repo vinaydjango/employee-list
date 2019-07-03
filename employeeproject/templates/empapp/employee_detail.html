@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+      <p>Employee Name : {{employee.employee_fullname}}</p>
+      <p>Email : {{employee.email_id}}</p>
+      <p>Gender : {{employee.gender}}</p>
+      <p>Profilr Pic : <img src="{{ employee.Profile_Pic.url }}" alt="" width='150px' height='150px'></p>
+      <p>Status : {{employee.employee_status}}</p>
+    <p><a href="/" class='btn btn-primary btn-md'>Back</a>
+    </p>
+
+  </body>
+</html>

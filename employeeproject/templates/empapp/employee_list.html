@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <h2 align='center'>Employee List</h2>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sl:no</th>
+            <th>Employee Full Name </th>
+            <th>Email ID </th>
+            <th>Gender</th>
+            <th>Profile Pic</th>
+            <th>Employee Status </th>
+            <th>Status</th>
+
+          </tr>
+          <div class="btn btn-primary btn lg" align='right'>
+            <a href="/create" style='color:white; text-align:right;'>Add Employee</a>
+          </div>&nbsp
+          <div class="btn btn-info btn lg" align='right'>
+            <a href="/csv" style='color:white; text-align:right;'>Export</a>
+          </div>
+        </thead>
+        <tbody>
+
+          {% for list in employee_list%}
+
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{list.employee_fullname}}</td>
+            <td>{{list.email_id}}</td>
+            <td>{{list.gender}}</td>
+            <td><img src="{{ list.Profile_Pic.url }}" alt="" width='60px' height='60px'></td>
+            <td>{{list.employee_status}}</td>
+            <td><a href="/details/{{list.id}}" class='brn btn-success btn-md'>View</a> || <a href="/update/{{list.id}}" class='brn btn-info btn-md'>Edit</a> || <a href="/delete/{{list.id}}" class='brn btn-danger btn-md'  onclick="confirm('Do you want to delete')">Delete</a> </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
